@@ -2,30 +2,30 @@
 
 CREATE TABLE IF NOT EXISTS Genres (
     genre_id SERIAL PRIMARY KEY,
-    name VARCHAR(50) NOT NULL
+    name_genre VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Musicians (
     musician_id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL
+    name_musician VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Albums (
     album_id SERIAL PRIMARY KEY,
-    title VARCHAR(250) NOT NULL,
+    title_album VARCHAR(250) NOT NULL,
     release_date DATE NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Tracks (
     track_id SERIAL PRIMARY KEY,
-    title VARCHAR(250) NOT NULL,
-    length INT CHECK (length > 0),
+    title_track VARCHAR(250) NOT NULL,
+    length_track INT CHECK (length > 0),
     album_id INT REFERENCES Albums(album_id) ON DELETE CASCADE NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Collections (
     collection_id SERIAL PRIMARY KEY,
-    title VARCHAR(250) NOT NULL,
+    title_collection VARCHAR(250) NOT NULL,
     release_date DATE NOT NULL
 );
 
