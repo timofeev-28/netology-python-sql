@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS Albums (
 CREATE TABLE IF NOT EXISTS Tracks (
     track_id SERIAL PRIMARY KEY,
     title_track VARCHAR(250) NOT NULL,
-    length_track INT CHECK (length > 0),
+    length_track INT CHECK (length_track > 0),
     album_id INT REFERENCES Albums(album_id) ON DELETE CASCADE NOT NULL
 );
 
